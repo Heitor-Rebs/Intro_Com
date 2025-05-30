@@ -5,11 +5,12 @@ int main() {
     char estado[3], codigo[5], nome[51];
     char estado2[3], codigo2[5], nome2[51];
     int populacao, pturistico, populacao2, pturistico2;
-    float area, pib, area2, pib2;
-    
-    
-    /* Carta 1 
-    Utilizando printf e fgets para instruir e obter os valores do tipo char, repectivamente */
+    float area, pib, area2, pib2, densidade, pibcapita, densidade2, pibcapita2;
+
+    printf("Cadastro das cartas do Super Trunfo \n\n");
+
+    /* Carta 1 */
+    /* Utilizando printf e fgets para instruir e obter os valores do tipo char, repectivamente */
     printf("Insira a letra que representa o estado da cidade 1 (A a H): \n");
     fgets(estado, 3, stdin);
     estado[strcspn(estado, "\n")] = '\0'; /* Retirando o espaço que o fgets pode incluir no texto */
@@ -21,7 +22,7 @@ int main() {
     printf("Insira o nome da cidade 1: \n");
     fgets(nome, 51, stdin);
     nome[strcspn(nome, "\n")] = '\0';
-    
+
     /* Utilizando o scanf para obter os valores dos tipo int e float */
     printf("Insira a população da cidade 1: \n");
     scanf("%d", &populacao);
@@ -31,7 +32,7 @@ int main() {
     scanf("%f", &area);
     getchar();
 
-    printf("Insira o PIB da cidade 1: \n");
+    printf("Insira o PIB em bilhões da cidade 1: \n");
     scanf("%f", &pib);
     getchar();
 
@@ -60,14 +61,23 @@ int main() {
     scanf("%f", &area2);
     getchar();
 
-    printf("Insira o PIB da cidade 2: \n");
+    printf("Insira o PIB em bilhões da cidade 2: \n");
     scanf("%f", &pib2);
     getchar();
 
     printf("Insira o número de pontos turísticos da cidade 2: \n");
     scanf("%d", &pturistico2);
     getchar();
-    
+
+    /* Calculando Densidade Populacional e PIB per Capita */
+    /* Carta 1 */
+    densidade = populacao / area;
+    pibcapita = (pib / populacao) * 1000000; /* Multiplicando por bilhão para obter valor em reais */
+
+    /* Carta 2 */
+    densidade2 = populacao2 / area2;
+    pibcapita2 = (pib / populacao2) * 1000000;
+
     /* Mostrando os valores de cada carta */
     printf("\nCarta 1:\n");
     printf("Estado: %s\n", estado);
@@ -77,6 +87,8 @@ int main() {
     printf("Área: %.2f km²\n", area);
     printf("PIB: %.2f bilhões de reais\n", pib);
     printf("Número de Pontos Turísticos: %d\n", pturistico);
+    printf("Densidade Poupulacional: %.2f hab/km²\n", densidade);
+    printf("PIB per Capita: %.2f reais\n", pibcapita);
 
     printf("\nCarta 2:\n");
     printf("Estado: %s\n", estado2);
@@ -86,6 +98,8 @@ int main() {
     printf("Área: %.2f km²\n", area2);
     printf("PIB: %.2f bilhões de reais\n", pib2);
     printf("Número de Pontos Turísticos: %d\n", pturistico2);
+    printf("Densidade Poupulacional: %.2f hab/km²\n", densidade2);
+    printf("PIB per Capita: %.2f reais\n", pibcapita2);
 
 
     return 0;
