@@ -141,5 +141,17 @@ int main() {
     vencedor++;
     printf("Super Poder: Carta %d venceu (%d)\n", vencedor, comparacao);
 
+    /* Determinando carta vencedora utilizando o critéiro de PIB per Capita com IF e Else */
+    printf("Comparação de cartas (Atributo: PIB per Capita)\n\n");
+    printf("Carta 1 - %s - %.2f reais\n", nome, pibcapita);
+    printf("Carta 2 - %s - %.2f reais\n", nome2, pibcapita2);
+    if (pibcapita > pibcapita2){
+        printf("Carta 1 (%s) venceu",nome);
+    } else if (pibcapita < pibcapita2){
+        printf("Carta 2 (%s) venceu",nome2);
+    } else {
+        printf("As cartas empataram");
+    }
+
     return 0;
 }
