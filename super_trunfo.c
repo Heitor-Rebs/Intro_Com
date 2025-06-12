@@ -29,7 +29,7 @@ int main() {
     /* Utilizando o scanf para obter os valores dos tipo int e float */
     printf("Insira a população da cidade 1: \n");
     scanf("%lu", &populacao);
-    getchar(); /* Evitando do fgets seguintes de pegar o enter antes de inserirmos seus valores */
+    getchar(); /* Evitando que o fgets seguintes de pegar o enter antes de inserirmos seus valores */
 
     printf("Insira a área da cidade em quilômetros quadrados da cidade 1: \n");
     scanf("%f", &area);
